@@ -28,6 +28,12 @@ function show() {
 
 show();
 
-console.log(functionVar); // Lanza ReferenceError
-console.log(functionLet); // Lanza ReferenceError
-console.log(functionConst); // Lanza ReferenceError
+// console.log(functionVar); // Lanza ReferenceError
+// console.log(functionLet); // Lanza ReferenceError
+// console.log(functionConst); // Lanza ReferenceError
+
+{
+    let blockLet2 = "Soy un let con ambito de bloque";
+    const blockConst2 = "Soy un const con ambito de bloque";
+    var blockVar2 = "Soy un var con ambito de bloque";
+}
