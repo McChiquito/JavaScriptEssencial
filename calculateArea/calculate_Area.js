@@ -1,11 +1,24 @@
-let legth;
+let length;
 let width;
 
 function calculateArea() {
-    legth = parseFloat(document.getElementById('legth').value);
+    length = parseFloat(document.getElementById('length').value);
     width = parseFloat(document.getElementById('width').value);
 
-let area = legth * width
+    let area = length * width
 document.getElementById('result').innerText = `The area of th rectangle is: ${area}`;
 
+}
+
+let grocery1;
+let grocery2;
+let grocery3;
+
+function groceryTracker() {
+    grocery1 = parseFloat(document.getElementById('grocery1').value);
+    grocery2 = parseFloat(document.getElementById("grocery2").value);
+    grocery3 = parseFloat(document.getElementById("grocery3").value);
+
+    let total = grocery1 + grocery2 + grocery3
+document.getElementById('total').innerHTML = `El total de su compra es de ${total}`
 }
