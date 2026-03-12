@@ -4,6 +4,7 @@ let isLoggedIn = true;
 let userMesssage;
 let userType = "subscriber";
 let userCategory;
+let rol = "Empleado";
 
 let isAuthenticated = true;
 let authenticationStatus = isAuthenticated ? "Authenticated" : "Not Authenticated";
@@ -45,3 +46,12 @@ switch (userType) {
 }
 console.log("User CAtegory:", userCategory);
 
+if (rol === "Empleado") {
+    console.log("Acceso autorizado a Servicios Dieteticos");
+} else if(rol === "Miembro Inscrito") {
+    console.log("Acceso completo + interaccion con dietista");
+} else if(rol === "Suscriptor") {
+    console.log("Acceso limitado a servicios dieteticos");
+} else {
+    console.log("Debes inscribirse para acceder a los Servicios Dieteticso");
+}
