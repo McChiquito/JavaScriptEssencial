@@ -1,4 +1,9 @@
 function submitFeedback(){
+
+    const experiencia = document.getElementById('userExperince').value;
+    document.getElementById('output').innerHTML = experiencia;
+
+
     const username = document.getElementById('name').value;
     const age = document.getElementById('age').value;
     const email = document.getElementById('email').value;
@@ -7,18 +12,8 @@ function submitFeedback(){
     const pproductType = document.getElementById('productType').value;
     const feedback = document.getElementById('feedbackText').value;
 
-    const submitButton = document.getElementById('submitBtn');
-    submitButton.onclick = submitFeedback;
 
     alert('Thank you for your valuable feedback');
-
- 
-
-    document.getElementById('userInfo').style.display = 'block';
-
-
-}
-
 
     document.getElementById('userName').innerHTML = username;
     document.getElementById('userAge').innerHTML = age;
@@ -30,8 +25,19 @@ function submitFeedback(){
    
 
 
+    document.getElementById('userInfo').style.display = 'block';
+
+
+}
+    const submitButton = document.getElementById('submitBtn');
+    submitButton.onclick = submitFeedback;
+
+
+
+
     document.addEventListener('keydown', function(event){
     if (event.key === 'Enter') {
         submitFeedback();
     }
     });
+
