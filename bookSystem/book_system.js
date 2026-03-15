@@ -3,7 +3,7 @@ let books = [];
 function addBook() {
     const bookName = document.getElementById('bookName').value;
     const authorName = document.getElementById('authorName').value;
-    const bookDescription = document.getElementById('bookDEscription').value;
+    const bookDescription = document.getElementById('bookDescription').value;
     const pagesNumber = parseInt(document.getElementById('pagesNumber').value); 
     
     if (bookName && authorName && bookDescription && !isNaN(pagesNumber)) {
@@ -13,7 +13,7 @@ function addBook() {
             bookDescription: bookDescription,
             pagesNumber: pagesNumber
         };
-        book.push(book);
+        books.push(book);
         showbooks();
         clearInputs();
     } else {
@@ -27,7 +27,9 @@ function showbooks() {
         <p><strong>Nombre del autor: </strong> ${book.authorName}</p>
         <p><strong>Descripcion del libro: </strong> ${book.bookDescription}</p>
         <p><strong>Numero de paginas: </strong> ${book.pagesNumber} pagina(s)</p>
-        <button onclick="editbook(${index})">Editar</button>`
+        <button onclick="editbook(${index})">Editar</button>
+        <button onclick="deleteBook(${index})">Eliminar</button> `
+
     );
     document.getElementById('books').innerHTML = booksDiv.join('');
 }
@@ -38,13 +40,21 @@ function editbook(index) {
     document.getElementById('authorName').value = book.authorName;
     document.getElementById('bookDescription').value = book.bookDescription;
     document.getElementById('pagesNumber').value = book.pagesNumber;
-    book.splice(index, i); // Elimina las estradas antiguas
+    
+    books.splice(index, 1); // Elimina las estradas antiguas
     showbooks(); // Actualiza la lista
 }
 
-function clearInpouts() {
+function deleteBook(index) {
+    // Elimina el esntrada del libro dado en el Index
+    books.splice(index, 1);
+    showbooks(); // Actualiza la lista de libros despues de realizar la eliminacion del libro
+}
+
+function clearInputs() {
     document.getElementById('bookName').value = '';
     document.getElementById('authorName').value = '';
-    document.getElementById('bookDEscription').value = '';
+    document.getElementById('bookDescription').value = '';
     document.getElementById('pagesNumber').value = '';
 }
+
