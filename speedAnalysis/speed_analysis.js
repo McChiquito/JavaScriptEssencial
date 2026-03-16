@@ -38,7 +38,9 @@ function endTest() {
     
     // Mostrar los resultados
     var outputDiv = document.getElementById("output");
-    outputDiv.innerHTML = "<h2>Resultado de la Pruba de Escritura: </h2>" + 
+    outputDiv.innerHTML = 
+    "<h2>Resultado de la Pruba de Escritura: </h2>" + 
+    "<p> Total de caracteres del texto: " + userTyperdText.length + "<p>" +
     "<p> Palabras Escribidas: " + typeWords + "</p>" +
     "<p>Tiempo Transcurrido: " + timeElapsed.toFixed(2) + " segundos </p>" +
     "<p>Palabras por Minuto (WPM): " + wpm + "</p>";
