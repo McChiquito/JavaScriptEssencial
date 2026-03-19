@@ -1,5 +1,5 @@
 var xhr = new XMLHttpRequest();
-var url = './health_article.json';
+var url = './notice_article.json';
 
 xhr.open('GET', url, true);
 xhr.responseType = 'json';
@@ -10,7 +10,7 @@ xhr.onload = function() {
 
     articles.forEach(function(article) {
         var articleDiv = document.createElement('div');
-        articleDiv.classList.add('article');
+        articlesDiv.classList.add('article');
 
         var title = document.createElement('h2');
         title.textContent = article.title;
@@ -31,22 +31,22 @@ xhr.onload = function() {
         var benefitsHeader = document.createElement('h3');
         benefitsHeader.textContent = 'Beneficios: ';
 
-        var benefitsList = document.createElement('ul')
+        var benefitsList = document.createElement('ul');
         article.benefits.forEach(function(benefit) {
-            var listItem = document.createElement('li');
+            var listItem = document.createTextNode('li');
             listItem.textContent = benefit;
             benefitsList.appendChild(listItem);
         })
 
-        articleDiv.appendChild(title);
-        articleDiv.appendChild(description);
-        articleDiv.appendChild(waysHeader);
-        articleDiv.appendChild(waysList);
-        articleDiv.appendChild(benefitsHeader);
-        articleDiv.appendChild(benefitsList);
+        articlesDiv.appendChild(title);
+        articlesDiv.appendChild(description);
+        articlesDiv.appendChild(waysHeader);
+        articlesDiv.appendChild(waysList);
+        articlesDiv.appendChild(benefitsHeader);
+        articlesDiv.appendChild(benefitsList);
 
         articlesDiv.appendChild(articleDiv);
     });
 }
-    
+
 xhr.send();
