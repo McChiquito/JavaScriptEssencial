@@ -12,7 +12,7 @@ const timerElement = document.getElementById('timer');
 
 function generateCards() {
     for (const color of cards) {
-        const card = document.getElementById('div');
+        const card = document.createElement('div');
         card.classList.add('card');
         card.dataset.color = color;
         card.textContent = '?';
